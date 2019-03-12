@@ -1,6 +1,7 @@
 import dva from 'dva';
 import createHistory from 'history/createBrowserHistory'
 import './global.scss';
+import './mock'
 
 // 1. Initialize
 const app = dva({

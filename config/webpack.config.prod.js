@@ -106,11 +106,13 @@ const webpackConfigProd = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new OptimizeCssAssetsPlugin(),
+        // 类似 webpackOptions.output里面的配置
         new MiniCssExtractPlugin({
             filename: 'css/[name].[hash].css',
             chunkFilename: '[id].css',
           }),
     ],
+     //设置 optimization.minimizer 覆盖webpack默认提供的，确保也指定一个JS压缩器
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
