@@ -1,0 +1,18 @@
+.itemRow{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    .icon{
+        width:12rem;
+        height: 12rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+    .info{
+        flex:1;
+    }
+}

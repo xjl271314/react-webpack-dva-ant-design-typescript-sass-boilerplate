@@ -5,8 +5,10 @@ const Random = Mock.Random // Mock.Random 是一个工具类，用于生成各�
 
 // 模拟请求列表
 Mock.mock(appConfig.baseUrl+'example/list',{
-    'code':1,
-    'icon': Random.image(Random.size, '#02adea', 'Hello'),
-    'title':Random.name(),
-    'desc':Random.name(3),
+    code:1,
+    data:{
+        'icon': Random.image(Random.size, '#02adea', 'Img'),
+        'title':Random.name(),
+        'desc':Random.name(3)
+    }
 })

@@ -7,20 +7,21 @@ import {
 } from 'antd'
 import ListItem from 'components/ListItem'
 
-interface LoadTypes{
-    isLoading:boolean,
-    toggleLoading:any
-}
 
 function ListPage(){
-    // const { list,setList }:any = useState([])
-    const { isLoading,toggleLoading } :any = useState(true)
+    const [ list,setList ] = useState([]);
+    const [ loading,toggleLoading ] = useState(true);
+
     const handleStatusChange = (status)=>{toggleLoading(status)}
 
     const initData = async (): Promise<any> => {
         // 发起请求并执行初始化操作
         api.getListInfo().then((res) => {
             console.log(res)
+            if(res.code == 1){
+                setList(res.data)
+                handleStatusChange(false)
+            }
         })
     }
 
@@ -31,7 +32,8 @@ function ListPage(){
 
     return (
         <div>
-            <Spin spinning={isLoading} />
+            <Spin spinning={loading} />
+            <ListItem data={list} />
         </div>
     )
 }
