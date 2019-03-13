@@ -4,7 +4,7 @@ import * as styles from './index.scss';
 import api from '../../service'
 import List from 'components/List'
 
-function ListPage() {
+function AdvancedListPage() {
     const [list, setList] = useState([]);
     const [loading, toggleLoading] = useState(true);
 
@@ -36,4 +36,4 @@ function ListPage() {
     )
 }
 
-export default ListPage
+export default AdvancedListPage

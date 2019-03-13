@@ -1,29 +1,20 @@
-import React,{ Component } from 'react';
-import { connect } from 'dva';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import * as styles from './index.scss';
+import {
+    Button
+} from 'antd'
 
-type IindexProps = {
-    num:number;
-    dispatch:any;
-}
-//有状态
-class Count extends Component<IindexProps,any>{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        const { num,dispatch } = this.props;
-        return(
-            <div>
-                <div> {num} </div>
-                <button onClick={()=>dispatch({type:'count/add'})}>添加</button>
-                <button onClick={()=>dispatch({type:'count/reduce'})}>减少</button>
-            </div>
-        );
-    }
+function Count() {
+    const [count, setCount] = useState(0);
+    return (
+        <div className={styles.container}>
+            <p className={styles.title}>you clicked {count} 次</p>
+            <Button className={styles.button1} type="primary" onClick={() => setCount(count + 1)}>点击我计数</Button>
+            <Button type="danger" onClick={() => setCount(0)}>重新计数</Button>
+        </div>
+    )
 }
 
-function mapState(state) {
-    return { num: state.count.num };
-  }
-  
-  export default connect(mapState)(Count);
+export default Count;
+
