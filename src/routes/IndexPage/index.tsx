@@ -18,9 +18,9 @@ function Home() {
                 <Paragraph>
                     目录结构:
                     <ul>
-                        <li><Link to="/count">最简单的计数器例子</Link></li>
-                        <li><Link to="/list">简单的列表加载例子</Link></li>
-                        <li><Link to="/advanced_list">复杂的列表加载例子</Link></li>
+                        <li><Link to="/count">最简单的计数器例子——>useState</Link></li>
+                        <li><Link to="/count_reducer">简单的计数器列子——>useReducer</Link></li>
+                        <li><Link to="/list">简单的列表加载例子——>useEffect</Link></li>
                     </ul>
                 </Paragraph>
             </Typography>

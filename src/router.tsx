@@ -3,7 +3,7 @@ import { Router, Route, Switch } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import CountPage from './routes/Count';
 import ListPage from './routes/ListPage';
-import AdvancedListPage from './routes/AdvancedListPage';
+import CountReducerPage from './routes/CountReducerPage';
 
 function RouterConfig({ history }) {
   return (
@@ -12,7 +12,7 @@ function RouterConfig({ history }) {
         <Route path="/" exact component={IndexPage} />
         <Route path="/count" exact component={CountPage} />
         <Route path="/list" exact component={ListPage} />
-        <Route path="/advanced_list" exact component={AdvancedListPage} />
+        <Route path="/count_reducer" exact component={CountReducerPage} />
       </Switch>
     </Router>
   );

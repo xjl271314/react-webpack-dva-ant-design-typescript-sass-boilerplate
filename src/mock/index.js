@@ -13,3 +13,14 @@ Mock.mock(appConfig.baseUrl+'example/list',{
         'desc':Random.name(3)
     }]
 })
+
+// 模拟请求列表
+Mock.mock(appConfig.baseUrl+'example/qqlist',{
+    'code':1,
+    'data|5-10':[{
+        'key':Random.natural(),
+        'avatar': Random.image(Random.size, '#02adea', Random.name),
+        'name':Random.name(),
+        'desc|1':Random.paragraph()
+    }]
+})
